@@ -1,0 +1,18 @@
+#!/user/bin/env php
+
+<?php
+
+use app\commands\DataFeedCommand;
+use Symfony\Component\Console\Application;
+
+require __DIR__ . '/vendor/autoload.php';
+
+$app = new Application();
+
+$app->add(new DataFeedCommand());
+
+try {
+    $app->run();
+} catch (Exception $e) {
+
+}
