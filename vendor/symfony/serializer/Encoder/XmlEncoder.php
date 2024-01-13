@@ -99,7 +99,7 @@ class XmlEncoder implements EncoderInterface, DecoderInterface, NormalizationAwa
 
         return $dom->saveXML($ignorePiNode ? $dom->documentElement : null, $context[self::SAVE_OPTIONS] ?? $this->defaultContext[self::SAVE_OPTIONS]);
     }
-
+    
     public function decode(string $data, string $format, array $context = []): mixed
     {
         if ('' === trim($data)) {

@@ -20,6 +20,10 @@ class ComposerStaticInitbcc6b0793108ef1450c472988ff587b5
     );
 
     public static $prefixLengthsPsr4 = array (
+        'e' => 
+        array (
+            'entity\\' => 7,
+        ),
         'a' => 
         array (
             'app\\' => 4,
@@ -36,10 +40,10 @@ class ComposerStaticInitbcc6b0793108ef1450c472988ff587b5
             'Symfony\\Contracts\\Service\\' => 26,
             'Symfony\\Contracts\\EventDispatcher\\' => 34,
             'Symfony\\Contracts\\Cache\\' => 24,
+            'Symfony\\Component\\Yaml\\' => 23,
             'Symfony\\Component\\VarExporter\\' => 30,
             'Symfony\\Component\\VarDumper\\' => 28,
             'Symfony\\Component\\String\\' => 25,
-            'Symfony\\Component\\Stopwatch\\' => 28,
             'Symfony\\Component\\Serializer\\' => 29,
             'Symfony\\Component\\Routing\\' => 26,
             'Symfony\\Component\\Process\\' => 26,
@@ -56,7 +60,6 @@ class ComposerStaticInitbcc6b0793108ef1450c472988ff587b5
             'Symfony\\Component\\Cache\\' => 24,
             'Symfony\\Bundle\\MakerBundle\\' => 27,
             'Symfony\\Bundle\\FrameworkBundle\\' => 31,
-            'Symfony\\Bridge\\Doctrine\\' => 24,
         ),
         'P' => 
         array (
@@ -68,10 +71,8 @@ class ComposerStaticInitbcc6b0793108ef1450c472988ff587b5
         ),
         'D' => 
         array (
-            'Doctrine\\SqlFormatter\\' => 22,
             'Doctrine\\Persistence\\' => 21,
             'Doctrine\\ORM\\' => 13,
-            'Doctrine\\Migrations\\' => 20,
             'Doctrine\\Instantiator\\' => 22,
             'Doctrine\\Inflector\\' => 19,
             'Doctrine\\Deprecations\\' => 22,
@@ -80,12 +81,14 @@ class ComposerStaticInitbcc6b0793108ef1450c472988ff587b5
             'Doctrine\\Common\\Collections\\' => 28,
             'Doctrine\\Common\\Cache\\' => 22,
             'Doctrine\\Common\\' => 16,
-            'Doctrine\\Bundle\\MigrationsBundle\\' => 33,
-            'Doctrine\\Bundle\\DoctrineBundle\\' => 31,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
+        'entity\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src/Entity',
+        ),
         'app\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src/app',
@@ -130,6 +133,10 @@ class ComposerStaticInitbcc6b0793108ef1450c472988ff587b5
         array (
             0 => __DIR__ . '/..' . '/symfony/cache-contracts',
         ),
+        'Symfony\\Component\\Yaml\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/yaml',
+        ),
         'Symfony\\Component\\VarExporter\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/var-exporter',
@@ -141,10 +148,6 @@ class ComposerStaticInitbcc6b0793108ef1450c472988ff587b5
         'Symfony\\Component\\String\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/string',
-        ),
-        'Symfony\\Component\\Stopwatch\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/symfony/stopwatch',
         ),
         'Symfony\\Component\\Serializer\\' => 
         array (
@@ -210,10 +213,6 @@ class ComposerStaticInitbcc6b0793108ef1450c472988ff587b5
         array (
             0 => __DIR__ . '/..' . '/symfony/framework-bundle',
         ),
-        'Symfony\\Bridge\\Doctrine\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/symfony/doctrine-bridge',
-        ),
         'Psr\\Log\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/log/src',
@@ -234,10 +233,6 @@ class ComposerStaticInitbcc6b0793108ef1450c472988ff587b5
         array (
             0 => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser',
         ),
-        'Doctrine\\SqlFormatter\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/doctrine/sql-formatter/src',
-        ),
         'Doctrine\\Persistence\\' => 
         array (
             0 => __DIR__ . '/..' . '/doctrine/persistence/src/Persistence',
@@ -245,10 +240,6 @@ class ComposerStaticInitbcc6b0793108ef1450c472988ff587b5
         'Doctrine\\ORM\\' => 
         array (
             0 => __DIR__ . '/..' . '/doctrine/orm/lib/Doctrine/ORM',
-        ),
-        'Doctrine\\Migrations\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/doctrine/migrations/lib/Doctrine/Migrations',
         ),
         'Doctrine\\Instantiator\\' => 
         array (
@@ -282,14 +273,6 @@ class ComposerStaticInitbcc6b0793108ef1450c472988ff587b5
         array (
             0 => __DIR__ . '/..' . '/doctrine/common/src',
             1 => __DIR__ . '/..' . '/doctrine/event-manager/src',
-        ),
-        'Doctrine\\Bundle\\MigrationsBundle\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/doctrine/doctrine-migrations-bundle',
-        ),
-        'Doctrine\\Bundle\\DoctrineBundle\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/doctrine/doctrine-bundle',
         ),
     );
 

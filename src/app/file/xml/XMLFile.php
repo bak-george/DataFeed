@@ -3,10 +3,11 @@
 namespace app\file\xml;
 use app\file\AbstractFile;
 use Symfony\Component\Serializer\Encoder\XmlEncoder;
+use function Symfony\Component\String\s;
 
 class XMLFile extends AbstractFile
 {
-    public function decoding(string $fileName)
+    public function decoding($fileName)
     {
         $this->setFileName($fileName);
         $this->setFilePath($fileName);
@@ -27,4 +28,14 @@ class XMLFile extends AbstractFile
 
         return $xmlEncoder->decode($XMLContent, 'xml', $context);
     }
+
+    public function pushData($data, $storageType)
+    {
+        if ($storageType == "database") {
+            $this->pushToMySQL($data);
+
+            return true;
+        }
+    }
+
 }

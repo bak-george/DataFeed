@@ -3,9 +3,13 @@
 namespace app\file;
 interface FileInterface
 {
-    public function setFileName($fileName);
+    public function setFileName(string $fileName);
 
-    public function setFilePath($fileName);
+    public function setFilePath(string $fileName);
 
     public function getFilePath();
+
+    public function decoding(string $fileName);
+
+    public function pushToMySQL(array $data);
 }

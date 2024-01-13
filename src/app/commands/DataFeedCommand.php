@@ -11,7 +11,7 @@ use Symfony\Component\Process\Process;
 
 class DataFeedCommand extends Command
 {
-    protected static string $defaultName = 'app:dataFeed';
+    protected static $defaultName = 'dataFeed';
     protected static string $appDescription = 'A task about importing files and saving them into different kinds of data storages.';
     protected static string $helpMsg = '';
     protected static string $fileDescription = 'The name of the imported file. Please make sure to include it to folder "inputFiles"';
@@ -25,18 +25,23 @@ class DataFeedCommand extends Command
         $this->setName(self::$defaultName)
             ->setDescription(self::$appDescription)
             ->setHelp(self::$helpMsg)
-            ->addArgument('file', InputArgument::OPTIONAL, self::$fileDescription);
+            ->addOption('file', '-f',InputArgument::OPTIONAL, self::$fileDescription, 'feed.xml')
+            ->addOption('whereToPush', '-p',InputArgument::OPTIONAL, 'Type of storage we push the data', 'database');
     }
 
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
-        $filename = $input->getArgument('file');
+        $filename = $input->getOption('file');
+        $pushTo   = $input->getOption('whereToPush');
+
+        var_dump($filename);
+        var_dump($pushTo);
 
         $fileExtension = ValidFileExtensions::checkExtension($filename);
 
         if ($fileExtension) {
             $scriptPath = __DIR__ . '/../file/' . $fileExtension .  '/';
-            $commandBuild = ['php', 'import.php', '--file', $filename];
+            $commandBuild = ['php', 'import.php', '--file', $filename, '--pushTo', $pushTo];
             $importScript = new Process($commandBuild, $scriptPath);
 
             $importScript->run();
