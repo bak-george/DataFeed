@@ -1,9 +1,10 @@
 <?php
 
 namespace app\file;
-class ValidFileExtensions
+class OptionsValidation
 {
     protected static array $extensions = ["xml"];
+    protected static array $pushToType = ["database"];
 
     public static function checkExtension($fileName)
     {
@@ -12,6 +13,15 @@ class ValidFileExtensions
 
         if (in_array($fileExtension, self::$extensions)) {
             return $fileExtension;
+        } else {
+            return false;
+        }
+    }
+
+    public static function checkPushToType($pushTo)
+    {
+        if (in_array($pushTo, self::$pushToType)) {
+            return true;
         } else {
             return false;
         }

@@ -14,5 +14,5 @@ $app->add(new DataFeedCommand());
 try {
     $app->run();
 } catch (Exception $e) {
-
+    echo 'Unexpected Error: ' . $e->getMessage() . PHP_EOL;
 }

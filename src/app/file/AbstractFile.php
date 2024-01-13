@@ -6,7 +6,6 @@ use app\file\FileInterface;
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\ORMSetup;
 use entity\Product;
-use Symfony\Component\Dotenv\Dotenv;
 
 class AbstractFile implements FileInterface
 {
