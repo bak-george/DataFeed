@@ -9,8 +9,6 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Process\Process;
 
-
-
 class DataFeedCommand extends Command
 {
     protected static string $defaultName = 'app:dataFeed';

@@ -5,12 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9a473770-baee-4f88-aa5e-a51018a2c041" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/app/file/xml/XMLFile.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inputFiles/feed.xml" beforeDir="false" afterPath="$PROJECT_DIR$/inputFiles/feed.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/file/AbstractFile.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/file/AbstractFile.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/file/FileInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/file/FileInterface.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/file/xml/import.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/file/xml/import.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/commands/DataFeedCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/commands/DataFeedCommand.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +62,7 @@
       <option name="presentableId" value="Default" />
       <updated>1705070927265</updated>
       <workItem from="1705070929601" duration="683000" />
-      <workItem from="1705071640540" duration="24060000" />
+      <workItem from="1705071640540" duration="24780000" />
     </task>
     <servers />
   </component>
