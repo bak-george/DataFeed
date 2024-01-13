@@ -17,7 +17,8 @@ class DataFeedCommand extends Command
     protected static string $fileDescription = 'The name of the imported file. Please make sure to include it to folder "inputFiles"';
 
     protected static array $errorMessages  = [
-        'fileType' => "Invalid file extension. Please use 'daily' or 'weekly'."
+        'fileType' => "Invalid file extension. Please use 'daily' or 'weekly'.",
+        'script'   => "Error executing the script: "
     ];
     protected function configure(): void
     {
@@ -42,7 +43,9 @@ class DataFeedCommand extends Command
 
             if (!$importScript->isSuccessful()) {
                 // Log an error if the script execution fails
-                $output->writeln("<error>Error executing the script: {$importScript->getErrorOutput()}</error>");
+                self::$errorMessages['script'] .= $importScript->getErrorOutput();
+
+                $output->writeln("<error>" . self::$errorMessages['script'] .  "</error>");
                 return Command::FAILURE;
             }
         } else {
