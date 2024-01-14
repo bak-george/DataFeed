@@ -22,6 +22,10 @@ class ComposerStaticInitbcc6b0793108ef1450c472988ff587b5
     );
 
     public static $prefixLengthsPsr4 = array (
+        'p' => 
+        array (
+            'phpDocumentor\\Reflection\\' => 25,
+        ),
         'e' => 
         array (
             'entity\\' => 7,
@@ -29,6 +33,10 @@ class ComposerStaticInitbcc6b0793108ef1450c472988ff587b5
         'a' => 
         array (
             'app\\' => 4,
+        ),
+        'W' => 
+        array (
+            'Webmozart\\Assert\\' => 17,
         ),
         'S' => 
         array (
@@ -69,7 +77,9 @@ class ComposerStaticInitbcc6b0793108ef1450c472988ff587b5
             'Psr\\EventDispatcher\\' => 20,
             'Psr\\Container\\' => 14,
             'Psr\\Cache\\' => 10,
+            'Prophecy\\' => 9,
             'PhpParser\\' => 10,
+            'PHPStan\\PhpDocParser\\' => 21,
         ),
         'D' => 
         array (
@@ -88,6 +98,12 @@ class ComposerStaticInitbcc6b0793108ef1450c472988ff587b5
     );
 
     public static $prefixDirsPsr4 = array (
+        'phpDocumentor\\Reflection\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
+            1 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
+            2 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
+        ),
         'entity\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src/Entity',
@@ -95,6 +111,10 @@ class ComposerStaticInitbcc6b0793108ef1450c472988ff587b5
         'app\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src/app',
+        ),
+        'Webmozart\\Assert\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/webmozart/assert/src',
         ),
         'Symfony\\Polyfill\\Php83\\' => 
         array (
@@ -232,9 +252,17 @@ class ComposerStaticInitbcc6b0793108ef1450c472988ff587b5
         array (
             0 => __DIR__ . '/..' . '/psr/cache/src',
         ),
+        'Prophecy\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/phpspec/prophecy/src/Prophecy',
+        ),
         'PhpParser\\' => 
         array (
             0 => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser',
+        ),
+        'PHPStan\\PhpDocParser\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/phpstan/phpdoc-parser/src',
         ),
         'Doctrine\\Persistence\\' => 
         array (
@@ -281,6 +309,10 @@ class ComposerStaticInitbcc6b0793108ef1450c472988ff587b5
         array (
             0 => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy',
         ),
+    );
+
+    public static $fallbackDirsPsr4 = array (
+        0 => __DIR__ . '/../..' . '/tests',
     );
 
     public static $classMap = array (
@@ -1473,6 +1505,7 @@ class ComposerStaticInitbcc6b0793108ef1450c472988ff587b5
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInitbcc6b0793108ef1450c472988ff587b5::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInitbcc6b0793108ef1450c472988ff587b5::$prefixDirsPsr4;
+            $loader->fallbackDirsPsr4 = ComposerStaticInitbcc6b0793108ef1450c472988ff587b5::$fallbackDirsPsr4;
             $loader->classMap = ComposerStaticInitbcc6b0793108ef1450c472988ff587b5::$classMap;
 
         }, null, ClassLoader::class);

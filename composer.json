@@ -13,11 +13,13 @@
     "autoload": {
         "psr-4": {
             "app\\": "src/app/",
-            "entity\\": "src/Entity/"
+            "entity\\": "src/Entity/",
+            "": "tests"
         }
     },
     "require-dev": {
         "symfony/maker-bundle": "^1.52",
-        "phpunit/phpunit": "^10.5"
+        "phpunit/phpunit": "^10.5",
+        "phpspec/prophecy": "^1.18"
     }
 }

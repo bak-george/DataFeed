@@ -19,10 +19,10 @@ class XMLFile extends AbstractFile
             'xml_format_output' => true,
         ];
 
-        if (is_readable($this->getFilePath())) {
+        if (!is_dir($this->getFilePath())) {
             $XMLContent = file_get_contents($this->getFilePath());
         } else {
-            throw new \Exception('XML file is not readable');
+            throw new \Exception('XML file cannot be found in inputFiles folder');
         }
 
         return $xmlEncoder->decode($XMLContent, 'xml', $context);
