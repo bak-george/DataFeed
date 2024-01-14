@@ -1,0 +1,1 @@
+[2024-01-14 14:08:22] Error: entity\Product::setCount(): Argument #1 ($count) must be of type int, string given, called in /Users/georgebakoulis/Documents/GitHub/DataFeed/src/app/file/AbstractFile.php on line 78

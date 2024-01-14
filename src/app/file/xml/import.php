@@ -4,25 +4,23 @@ require_once dirname(__DIR__, 4) . '/vendor/autoload.php';
 
 use app\file\xml\XMLFile;
 use app\monitor\ErrorLog;
-use Symfony\Component\Console\Command\Command;
 
 $options  = getopt('', ['file:', 'pushTo:']);
 $fileName = (string) $options['file'];
 $pushTo   = (string) $options['pushTo'];
+$logDirectory = dirname(__DIR__, 4) . '/outputFiles/errorLogs';
+$logFile      = new ErrorLog($logDirectory);
 
 try {
-$file = new XMLFile();
+    $file = new XMLFile();
 
-//chmod($filePath, 0755);
-$products = $file->decoding($fileName);
+    $products = $file->decoding($fileName);
 
-var_dump($products['item'][0]);
+    var_dump($products['item'][0]);
 
-$file->pushData($products, $pushTo);
+    $file->pushData($products, $pushTo);
 } catch (Exception $e) {
-    $logDirectory = dirname(__DIR__, 4) . '/outputFiles/errorLogs';
-    $logFile = new ErrorLog($logDirectory);
     $logFile->writeLog('Error: ' . $e->getMessage());
 
-    exit(1);
+    exit('Error: ' . $e->getMessage());
 }

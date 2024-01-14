@@ -1,0 +1,1 @@
+[2024-01-14 14:20:20] Error: An exception occurred while executing a query: SQLSTATE[22001]: String data, right truncated: 1406 Data too long for column 'flavored' at row 1

@@ -1,0 +1,1 @@
+[2024-01-14 14:17:00] Error: entity\Product::setRating(): Argument #1 ($rating) must be of type int, string given, called in /Users/georgebakoulis/Documents/GitHub/DataFeed/src/app/file/AbstractFile.php on line 76

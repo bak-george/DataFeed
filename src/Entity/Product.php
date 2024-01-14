@@ -28,8 +28,8 @@ class Product
     private string $description;
     #[Column(type: Types::TEXT)]
     private string $shortdesc;
-    #[Column(type: Types::DECIMAL, precision: 10, scale: 4)]
-    private float $price;
+    #[Column]
+    private string $price;
     #[Column]
     private string $link;
     #[Column]
@@ -37,11 +37,11 @@ class Product
     #[Column]
     private string $brand;
     #[Column]
-    private int $rating;
+    private string $rating;
     #[Column(name: 'caffeine_type')]
     private string $caffeineType;
     #[Column]
-    private int $count;
+    private string $count;
     #[Column]
     private string $flavored;
     #[Column]
@@ -135,7 +135,7 @@ class Product
         return $this->price;
     }
 
-    public function setPrice(float $price): void
+    public function setPrice(string $price): void
     {
         $this->price = $price;
     }
@@ -175,7 +175,7 @@ class Product
         return $this->rating;
     }
 
-    public function setRating(int $rating): void
+    public function setRating(string $rating): void
     {
         $this->rating = $rating;
     }
@@ -195,7 +195,7 @@ class Product
         return $this->count;
     }
 
-    public function setCount(int $count): void
+    public function setCount(string $count): void
     {
         $this->count = $count;
     }

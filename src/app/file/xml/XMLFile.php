@@ -35,7 +35,7 @@ class XMLFile extends AbstractFile
 
             return true;
         } else {
-            throw new \Exception('Failed to push data into storage');
+            throw new \Exception('Failed to push data into ' . $storageType  . ' storage');
         }
     }
 

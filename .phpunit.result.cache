@@ -1,0 +1,1 @@
+{"version":1,"defects":{"BasicTestCase::testCase":7,"XMLFileTest::testDecodingSuccess":8},"times":{"BasicTestCase::testCase":0.004,"BasicTestCase::testAnotherCase":0.004,"XMLFileTest::testDecodingSuccess":0.014}}

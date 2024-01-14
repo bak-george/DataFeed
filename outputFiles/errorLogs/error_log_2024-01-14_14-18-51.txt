@@ -1,0 +1,1 @@
+[2024-01-14 14:18:51] Error: entity\Product::setPrice(): Argument #1 ($price) must be of type float, string given, called in /Users/georgebakoulis/Documents/GitHub/DataFeed/src/app/file/AbstractFile.php on line 72
