@@ -19,6 +19,7 @@ php ./data dataFeed -f "feed.xml" -p "json"
 <h2>Extensibility</h2>
 Because of the abstraction and the object Product, you can add your own type of input and output storage.
 <h3>Example: From XML to JSON</h3>
+<img src="images/fromXMLtoJSON.png" alt="fromXMLtoJSON">
 <ul>Steps to export into JSON</ul>
 <li>Create a directory for the JSON files within the directory outputFiles
 <code>mkdir outputFiles/JSON</code></li>
