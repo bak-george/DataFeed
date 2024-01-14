@@ -1,0 +1,1 @@
+[2024-01-14 21:18:02] Error: The ObjectNormalizer class requires the "PropertyAccess" component. Try running "composer require symfony/property-access".

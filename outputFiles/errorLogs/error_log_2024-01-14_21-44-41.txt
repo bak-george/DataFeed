@@ -1,0 +1,1 @@
+[2024-01-14 21:44:41] Error: entity\Product::getCount(): Return value must be of type int, string returned

@@ -32,11 +32,10 @@ class XMLFile extends AbstractFile
     {
         if ($storageType == "database") {
             $this->pushToMySQL($data);
-
-            return true;
+        } elseif ($storageType == "json") {
+            $this->pushToJSON($data);
         } else {
             throw new \Exception('Failed to push data into ' . $storageType  . ' storage');
         }
     }
-
 }

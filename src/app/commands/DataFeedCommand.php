@@ -36,8 +36,8 @@ class DataFeedCommand extends Command
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
         try {
-            $filename = $input->getOption('file');
-            $pushTo   = $input->getOption('pushTo');
+            $filename = strtolower($input->getOption('file'));
+            $pushTo   = strtolower($input->getOption('pushTo'));
 
             OptionsValidation::checkValues($filename, $pushTo);
             OptionsValidation::checkPushToType($pushTo);
@@ -51,11 +51,15 @@ class DataFeedCommand extends Command
             $importScript->run();
 
             if ($importScript->isSuccessful()) {
-                $msg = "<info>" . $fileExtension ." file has successfully imported to database</info>" . PHP_EOL;
+                $msg = "<info>" . $fileExtension ." file has successfully imported</info>" . PHP_EOL;
 
                 switch ($pushTo) {
                     case 'database':
                         $msg .= "<info>Check the imported data: SELECT * FROM products WHERE file_name = '" . $filename . "'" . "<info>";
+                        break;
+                    case 'json':
+                        $msg .= "<info>Check outputFiles/JSON to see the imported file.<info>";
+                        break;
                 }
 
                 $output->writeln($msg);

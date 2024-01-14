@@ -1,0 +1,1 @@
+[2024-01-14 21:47:44] Error: entity\Product::getPrice(): Return value must be of type float, string returned

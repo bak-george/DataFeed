@@ -14,7 +14,7 @@ class XMLFileTest extends TestCase
 
     public function testDecoding()
     {
-        
+
     }
 
     protected function setUp(): void

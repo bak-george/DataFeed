@@ -56,6 +56,8 @@ class ComposerStaticInitbcc6b0793108ef1450c472988ff587b5
             'Symfony\\Component\\String\\' => 25,
             'Symfony\\Component\\Serializer\\' => 29,
             'Symfony\\Component\\Routing\\' => 26,
+            'Symfony\\Component\\PropertyInfo\\' => 31,
+            'Symfony\\Component\\PropertyAccess\\' => 33,
             'Symfony\\Component\\Process\\' => 26,
             'Symfony\\Component\\HttpKernel\\' => 29,
             'Symfony\\Component\\HttpFoundation\\' => 33,
@@ -179,6 +181,14 @@ class ComposerStaticInitbcc6b0793108ef1450c472988ff587b5
         'Symfony\\Component\\Routing\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/routing',
+        ),
+        'Symfony\\Component\\PropertyInfo\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/property-info',
+        ),
+        'Symfony\\Component\\PropertyAccess\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/property-access',
         ),
         'Symfony\\Component\\Process\\' => 
         array (

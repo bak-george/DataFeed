@@ -100,16 +100,6 @@ class Product
         $this->name = $name;
     }
 
-    public function getField(): string
-    {
-        return $this->field;
-    }
-
-    public function setField(string $field): void
-    {
-        $this->field = $field;
-    }
-
     public function getDescription(): string
     {
         return $this->description;
@@ -130,7 +120,7 @@ class Product
         $this->shortdesc = $shortdesc;
     }
 
-    public function getPrice(): float
+    public function getPrice(): string
     {
         return $this->price;
     }
@@ -170,7 +160,7 @@ class Product
         $this->brand = $brand;
     }
 
-    public function getRating(): int
+    public function getRating(): string
     {
         return $this->rating;
     }
@@ -190,7 +180,7 @@ class Product
         $this->caffeineType = $caffeineType;
     }
 
-    public function getCount(): int
+    public function getCount(): string
     {
         return $this->count;
     }

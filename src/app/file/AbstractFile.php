@@ -8,6 +8,10 @@ use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\ORMSetup;
 use entity\Product;
 use Exception;
+use Symfony\Component\Serializer\Encoder\JsonEncoder;
+use Symfony\Component\Serializer\Encoder\XmlEncoder;
+use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
+use Symfony\Component\Serializer\Serializer;
 use TypeError;
 
 class AbstractFile implements FileInterface
@@ -87,6 +91,54 @@ class AbstractFile implements FileInterface
             }
 
             $entityManager->flush();
+        } catch (Exception | TypeError $e) {
+            $logDirectory = dirname(__DIR__, 3) . '/outputFiles/errorLogs';
+            $logFile = new ErrorLog($logDirectory);
+            $logFile->writeLog('Error: ' . $e->getMessage());
+
+            exit('Error: ' . $e->getMessage());
+        }
+    }
+
+    final public function pushToJSON($data)
+    {
+        try {
+            $encoders = [new XmlEncoder(), new JsonEncoder()];
+            $normalizers = [new ObjectNormalizer()];
+            $serializer = new Serializer($normalizers, $encoders);
+            $allProducts = [];
+
+            foreach ($data['item'] as $product) {
+                $importProduct = (new Product());
+                $importProduct->setEntityId($product['entity_id']);
+                $importProduct->setCategoryName($product['CategoryName']);
+                $importProduct->setSku($product['sku']);
+                $importProduct->setName($product['name']);
+                $importProduct->setDescription($product['description']);
+                $importProduct->setShortdesc($product['shortdesc']);
+                $importProduct->setPrice($product['price']);
+                $importProduct->setLink($product['link']);
+                $importProduct->setImage($product['image']);
+                $importProduct->setBrand($product['Brand']);
+                $importProduct->setRating($product['Rating']);
+                $importProduct->setCaffeineType($product['CaffeineType']);
+                $importProduct->setCount($product['Count']);
+                $importProduct->setFlavored($product['Flavored']);
+                $importProduct->setSeasonal($product['Seasonal']);
+                $importProduct->setInstock($product['Instock']);
+                $importProduct->setFacebook($product['Facebook']);
+                $importProduct->setIsKcup($product['IsKCup']);
+                $importProduct->setFileName($this->getFileName());
+
+                $allProducts[] = $importProduct;
+            }
+            $jsonContent  = $serializer->serialize($allProducts, 'json', ['json_encode_options' => \JSON_PRESERVE_ZERO_FRACTION]);
+            $jsonContent = trim($jsonContent, '[]');
+
+            $jsonFileName = $this->getFileName() . '_' . date('Y-m-d_H-i-s');
+            $jsonFilePath = __DIR__ . '/../../../outputFiles/JSON/' . $jsonFileName . '.json';
+
+            file_put_contents($jsonFilePath, $jsonContent);
         } catch (Exception | TypeError $e) {
             $logDirectory = dirname(__DIR__, 3) . '/outputFiles/errorLogs';
             $logFile = new ErrorLog($logDirectory);

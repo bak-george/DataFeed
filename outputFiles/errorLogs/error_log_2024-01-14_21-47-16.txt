@@ -1,0 +1,1 @@
+[2024-01-14 21:47:16] Error: entity\Product::getRating(): Return value must be of type int, string returned

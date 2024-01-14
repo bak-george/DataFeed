@@ -13,11 +13,7 @@ $logFile      = new ErrorLog($logDirectory);
 
 try {
     $file = new XMLFile();
-
     $products = $file->decoding($fileName);
-
-    var_dump($products['item'][0]);
-
     $file->pushData($products, $pushTo);
 } catch (Exception $e) {
     $logFile->writeLog('Error: ' . $e->getMessage());
