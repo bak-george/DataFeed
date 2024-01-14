@@ -5,6 +5,8 @@ interface FileInterface
 {
     public function setFileName(string $fileName);
 
+    public function getFileName();
+
     public function setFilePath(string $fileName);
 
     public function getFilePath();

@@ -4,6 +4,8 @@ namespace app\commands;
 
 
 use app\file\OptionsValidation;
+use app\monitor\ErrorLog;
+use Exception;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
@@ -21,48 +23,53 @@ class DataFeedCommand extends Command
         'pushTo'     => 'Type of storage we push the data'
 
     ];
-    protected static array $errorMessages  = [
-        'fileType' => "Invalid file extension. Please use 'daily' or 'weekly'.",
-        'script'   => "Error executing the script: "
-    ];
+
     protected function configure(): void
     {
         $this->setName(self::$defaultName)
             ->setDescription(self::$descriptions['app'])
             ->setHelp(self::$helpMsg)
             ->addOption('file', '-f',InputArgument::OPTIONAL, self::$descriptions['fileOption'])
-            ->addOption('pushTo', '-p',InputArgument::OPTIONAL, self::$descriptions['pushTo'], 'database');
+            ->addOption('pushTo', '-p',InputArgument::OPTIONAL, self::$descriptions['pushTo']);
     }
 
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
-        $filename = $input->getOption('file');
-        $pushTo   = $input->getOption('pushTo');
+        try {
+            $filename = $input->getOption('file');
+            $pushTo   = $input->getOption('pushTo');
 
-        $fileExtension = OptionsValidation::checkExtension($filename);
+            OptionsValidation::checkValues($filename, $pushTo);
+            OptionsValidation::checkPushToType($pushTo);
+            $fileExtension = OptionsValidation::checkExtension($filename);
 
-        if ($fileExtension && OptionsValidation::checkPushToType($pushTo)) {
+
             $scriptPath = __DIR__ . '/../file/' . $fileExtension .  '/';
             $commandBuild = ['php', 'import.php', '--file', $filename, '--pushTo', $pushTo];
             $importScript = new Process($commandBuild, $scriptPath);
 
             $importScript->run();
 
-            if (!$importScript->isSuccessful()) {
-                // Log an error if the script execution fails
-                self::$errorMessages['script'] .= $importScript->getErrorOutput();
+            if ($importScript->isSuccessful()) {
+                $msg = "<info>" . $fileExtension ." file has successfully imported to database</info>" . PHP_EOL;
 
-                $output->writeln("<error>" . self::$errorMessages['script'] .  "</error>");
-                return Command::FAILURE;
+                switch ($pushTo) {
+                    case 'database':
+                        $msg .= "<info>Check the imported data: SELECT * FROM products WHERE file_name = '" . $filename . "'" . "<info>";
+                }
+
+                $output->writeln($msg);
+                return Command::SUCCESS;
             } else {
-                $output->writeln("<info>" . $fileExtension ." file has successfully imported to database</info>");
+                throw new Exception('Import Script failed');
             }
-        } else {
-            //log error to a file
-            $output->writeln("<error>" . self::$errorMessages['fileExtensions'] . "</error>");
+        } catch (Exception $e) {
+            $logDirectory = dirname(__DIR__, 3) . '/outputFiles/errorLogs';
+            $logFile = new ErrorLog($logDirectory);
+            $logFile->writeLog('Error: ' . $e->getMessage());
+
+            $output->writeln("<error>" . 'Error: ' . $e->getMessage() . "</error>");
             return Command::FAILURE;
         }
-
-        return Command::SUCCESS;
     }
 }

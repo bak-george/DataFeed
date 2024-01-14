@@ -22,8 +22,7 @@ class XMLFile extends AbstractFile
         if (is_readable($this->getFilePath())) {
             $XMLContent = file_get_contents($this->getFilePath());
         } else {
-            $XMLContent = '';
-            //log an error
+            throw new \Exception('XML file is not readable');
         }
 
         return $xmlEncoder->decode($XMLContent, 'xml', $context);
@@ -35,6 +34,8 @@ class XMLFile extends AbstractFile
             $this->pushToMySQL($data);
 
             return true;
+        } else {
+            throw new \Exception('Failed to push data into storage');
         }
     }
 

@@ -21,6 +21,11 @@ class AbstractFile implements FileInterface
         return $this;
     }
 
+    final public function getFileName()
+    {
+        return $this->fileName;
+    }
+
     final public function setFilePath($fileName)
     {
        $this->path = dirname(__DIR__, 3) . '/inputFiles/' . $fileName;
@@ -72,6 +77,7 @@ class AbstractFile implements FileInterface
             $importProduct->setInstock($product['Instock']);
             $importProduct->setFacebook($product['Facebook']);
             $importProduct->setIsKcup($product['IsKCup']);
+            $importProduct->setFileName($this->getFileName());
 
             $entityManager->persist($importProduct);
         }
