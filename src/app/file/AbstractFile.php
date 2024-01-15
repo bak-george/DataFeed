@@ -68,7 +68,6 @@ class AbstractFile implements FileInterface
             $this->productBuild($data, 'database', $entityManager);
             $entityManager->flush();
 
-            return true;
         } catch (Exception | TypeError $e) {
             $logDirectory = dirname(__DIR__, 3) . '/outputFiles/errorLogs';
             $logFile = new ErrorLog($logDirectory);
@@ -91,11 +90,9 @@ class AbstractFile implements FileInterface
             $jsonContent = trim($jsonContent, '[]');
 
             $jsonFileName = $this->getFileName() . '_' . date('Y-m-d_H-i-s');
-            $jsonFilePath = __DIR__ . '/../../../outputFiles/JSON/' . $jsonFileName . '.json';
+            $jsonFilePath = __DIR__ . dirname(__DIR__, 3) . '/outputFiles/JSON/' . $jsonFileName . '.json';
 
             file_put_contents($jsonFilePath, $jsonContent);
-
-            return true;
         } catch (Exception | TypeError $e) {
             $logDirectory = dirname(__DIR__, 3) . '/outputFiles/errorLogs';
             $logFile = new ErrorLog($logDirectory);

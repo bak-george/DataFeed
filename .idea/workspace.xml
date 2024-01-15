@@ -5,10 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9a473770-baee-4f88-aa5e-a51018a2c041" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/tests/unit/AbstractFileTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/outputFiles/JSON/test.xml_2024-01-15_14-40-42.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.phpunit.result.cache" beforeDir="false" afterPath="$PROJECT_DIR$/.phpunit.result.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/file/AbstractFile.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/file/AbstractFile.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/file/xml/import.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/file/xml/import.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/unit/AbstractFileTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/unit/AbstractFileTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/unit/XMLFileTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/unit/XMLFileTest.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -155,11 +156,7 @@
       <recent name="$PROJECT_DIR$/src/app/file/csv" />
     </key>
   </component>
-  <component name="RunManager" selected="PHPUnit.XMLFileTest.it_decodes_xml">
-    <configuration name="BasicTestCase" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="BasicTestCase" file="$PROJECT_DIR$/src/app/tests/BasicTestCase.php" scope="Class" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="PHPUnit.XMLFileTest.pushThrowsError">
     <configuration name="BasicTestCase.testAnotherCase" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
       <TestRunner class="BasicTestCase" file="$PROJECT_DIR$/src/app/tests/BasicTestCase.php" method="testAnotherCase" scope="Method" />
       <method v="2" />
@@ -176,13 +173,17 @@
       <TestRunner class="unit\XMLFileTest" file="$PROJECT_DIR$/tests/unit/XMLFileTest.php" method="it_decodes_xml" scope="Method" />
       <method v="2" />
     </configuration>
+    <configuration name="XMLFileTest.pushThrowsError" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="unit\XMLFileTest" file="$PROJECT_DIR$/tests/unit/XMLFileTest.php" method="pushThrowsError" scope="Method" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="PHPUnit.XMLFileTest.pushThrowsError" />
         <item itemvalue="PHPUnit.XMLFileTest.it_decodes_xml" />
         <item itemvalue="PHPUnit.XMLFileTest (1)" />
         <item itemvalue="PHPUnit.XMLFileTest" />
         <item itemvalue="PHPUnit.BasicTestCase.testAnotherCase" />
-        <item itemvalue="PHPUnit.BasicTestCase" />
       </list>
     </recent_temporary>
   </component>
@@ -198,7 +199,7 @@
       <workItem from="1705071640540" duration="24780000" />
       <workItem from="1705139413285" duration="2329000" />
       <workItem from="1705224941312" duration="32321000" />
-      <workItem from="1705323163746" duration="4284000" />
+      <workItem from="1705323163746" duration="6567000" />
     </task>
     <servers />
   </component>

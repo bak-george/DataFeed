@@ -19,9 +19,9 @@ class XMLFile extends AbstractFile
             'xml_format_output' => true,
         ];
 
-        if (!is_dir($this->getFilePath())) {
-            $XMLContent = file_get_contents($this->getFilePath());
-        } else {
+        $XMLContent = file_get_contents($this->getFilePath());
+
+        if (!$XMLContent) {
             throw new \Exception('XML file cannot be found in inputFiles folder');
         }
 
