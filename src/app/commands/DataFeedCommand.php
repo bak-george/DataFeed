@@ -3,7 +3,7 @@
 namespace app\commands;
 
 
-use app\file\OptionsValidation;
+use App\app\file\OptionsValidation;
 use app\monitor\ErrorLog;
 use Exception;
 use Symfony\Component\Console\Command\Command;

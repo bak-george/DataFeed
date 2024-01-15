@@ -1,6 +1,6 @@
 <?php
 
-namespace app\file;
+namespace App\app\file;
 
 use app\monitor\MissingParamsException;
 use Exception;

@@ -1,9 +1,8 @@
 <?php
 
 namespace app\file\xml;
-use app\file\AbstractFile;
+use App\app\file\AbstractFile;
 use Symfony\Component\Serializer\Encoder\XmlEncoder;
-use function Symfony\Component\String\s;
 
 class XMLFile extends AbstractFile
 {

@@ -1,8 +1,7 @@
 <?php
 
-namespace app\file;
+namespace App\app\file;
 
-use app\file\FileInterface;
 use app\monitor\ErrorLog;
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\ORMSetup;

@@ -1,6 +1,6 @@
 <?php
 
-namespace app\file;
+namespace App\app\file;
 interface FileInterface
 {
     public function setFileName(string $fileName);
