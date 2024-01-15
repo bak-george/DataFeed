@@ -97,13 +97,9 @@ public function pushData($data, $storageType)
 <p>The errors are logged into outputFiles/errorLogs through the ErrorLog.php class</p>
 
 <h3>Testing</h3>
-<p>Most of the testing I did was by running the basic command:</p>
-
-```bash
-php ./data dataFeed -f "feed.xml" -p "database"
-```
-<p>and running the import script directly: </p>
-
+<p>At first stages of the projected I've run import.php</p>
 ```bash
 php src/app/file/xml/import.php --file="test.xml" --pushTo="json"
 ```
+
+<p>But in order to be sure of the tools functionalities I've written PHPUnit tests (tests/unit)</p>

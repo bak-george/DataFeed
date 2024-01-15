@@ -51,7 +51,7 @@ class AbstractFile implements FileInterface
 
     final public function pushToMySQL($data)
     {
-        $db = require __DIR__ . '/../../../config/db.php';
+        $db = require dirname(__DIR__, 3) . '/config/db.php';
 
         $params = [
             'host'    => $db['host'],

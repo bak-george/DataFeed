@@ -19,10 +19,19 @@ class XMLFileTest extends TestCase
                 'price' => 19.99
             ]
         ];
+
+        $this->xmlContent = '<?xml version="1.0" encoding="UTF-8"?>
+                        <bookstore>
+                          <book>
+                            <title>Introduction to XML</title>
+                            <author>John Doe</author>
+                            <price>19.99</price>
+                          </book>
+                        </bookstore>';
     }
 
     /** @test */
-    public function decodeXML()
+    public function testTheOutputFromTheXMLDecoding()
     {
         $encoder = new XmlEncoder();
 
@@ -31,18 +40,20 @@ class XMLFileTest extends TestCase
             'xml_format_output' => true,
         ];
 
-        $xmlContent = '<?xml version="1.0" encoding="UTF-8"?>
-                        <bookstore>
-                          <book>
-                            <title>Introduction to XML</title>
-                            <author>John Doe</author>
-                            <price>19.99</price>
-                          </book>
-                        </bookstore>';
-
-        $decoded = $encoder->decode($xmlContent, 'xml', $context);
+        $decoded = $encoder->decode($this->xmlContent, 'xml', $context);
 
         $this->assertEquals($this->expectedArray, $decoded);
+    }
+
+    /** @test */
+    public function fileIsNotInTheOutputFolder()
+    {
+        $dummyFileName = 'dummy.xml';
+        $this->xml->setFileName($dummyFileName);
+
+        $this->expectException(\Exception::class);
+
+        $this->xml->decoding($this->xml->getFileName());
     }
 
     /**
@@ -51,7 +62,6 @@ class XMLFileTest extends TestCase
      */
     public function pushThrowsError($reqStorageType)
     {
-
         $this->expectException(\Exception::class);
 
         $this->xml->pushData($this->expectedArray, $reqStorageType);
