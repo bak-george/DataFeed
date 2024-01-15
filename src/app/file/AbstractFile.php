@@ -39,8 +39,7 @@ class AbstractFile implements FileInterface
        if (file_exists($this->path)) {
            return $this;
        } else {
-           return false;
-           //register error
+           throw new \Exception('File cannot be found in inputFiles folder');
        }
     }
 
@@ -90,7 +89,7 @@ class AbstractFile implements FileInterface
             $jsonContent = trim($jsonContent, '[]');
 
             $jsonFileName = $this->getFileName() . '_' . date('Y-m-d_H-i-s');
-            $jsonFilePath = __DIR__ . dirname(__DIR__, 3) . '/outputFiles/JSON/' . $jsonFileName . '.json';
+            $jsonFilePath = dirname(__DIR__, 3) . '/outputFiles/JSON/'  . $jsonFileName . '.json';
 
             file_put_contents($jsonFilePath, $jsonContent);
         } catch (Exception | TypeError $e) {

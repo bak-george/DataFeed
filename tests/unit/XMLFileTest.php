@@ -45,17 +45,6 @@ class XMLFileTest extends TestCase
         $this->assertEquals($this->expectedArray, $decoded);
     }
 
-    /** @test */
-    public function fileIsNotInTheOutputFolder()
-    {
-        $dummyFileName = 'dummy.xml';
-        $this->xml->setFileName($dummyFileName);
-
-        $this->expectException(\Exception::class);
-
-        $this->xml->decoding($this->xml->getFileName());
-    }
-
     /**
      * @test
      * @dataProvider Exception
@@ -74,5 +63,16 @@ class XMLFileTest extends TestCase
             ['csv'],
             ['mongoDB']
         ];
+    }
+
+    /** @test */
+    public function fileIsNotInTheOutputFolder()
+    {
+        $dummyFileName = 'dummy.xml';
+        $this->xml->setFileName($dummyFileName);
+
+        $this->expectException(\Exception::class);
+
+        $this->xml->decoding($this->xml->getFileName());
     }
 }

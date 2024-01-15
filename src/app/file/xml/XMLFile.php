@@ -21,10 +21,6 @@ class XMLFile extends AbstractFile
 
         $XMLContent = file_get_contents($this->getFilePath());
 
-        if (!$XMLContent) {
-            throw new \Exception('XML file cannot be found in inputFiles folder');
-        }
-
         return $xmlEncoder->decode($XMLContent, 'xml', $context);
     }
 
