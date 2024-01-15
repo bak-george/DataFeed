@@ -5,12 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9a473770-baee-4f88-aa5e-a51018a2c041" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/outputFiles/JSON/test.xml_2024-01-15_16-22-33.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/file/AbstractFile.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/file/AbstractFile.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/file/xml/XMLFile.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/file/xml/XMLFile.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/unit/AbstractFileTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/unit/AbstractFileTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/unit/XMLFileTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/unit/XMLFileTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/outputFiles/JSON/test.xml_2024-01-15_16-22-33.json" beforeDir="false" afterPath="$PROJECT_DIR$/inputFiles/test.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/ChangeLog-10.5.md" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/ChangeLog-10.5.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/phpunit" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/phpunit" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/phpunit/phpunit/src/Runner/Version.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/phpunit/phpunit/src/Runner/Version.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -159,10 +162,10 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/inputFiles" />
       <recent name="$PROJECT_DIR$/images" />
       <recent name="$PROJECT_DIR$/src/app" />
       <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/inputFiles" />
       <recent name="$PROJECT_DIR$/src/app/file/csv" />
     </key>
   </component>

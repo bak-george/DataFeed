@@ -18,7 +18,7 @@ php ./data dataFeed -f "feed.xml" -p "json"
 
 <h2>Extensibility</h2>
 Because of the abstraction and the object Product, you can add your own type of input and output storage.
-<h3>Example: From XML to JSON</h3>
+<h3>From XML to JSON</h3>
 <img src="images/fromXMLtoJSON.png" alt="fromXMLtoJSON">
 <ul>Steps to export into JSON</ul>
 <li>Create a directory for the JSON files within the directory outputFiles
@@ -69,6 +69,9 @@ public function pushData($data, $storageType)
         }
     }
 ```
+
+<h3>From JSON to MySQL</h3>
+<li></li>
 
 <h3>Logging Errors</h3>
 <p>The errors are logged into outputFiles/errorLogs through the ErrorLog.php class</p>
