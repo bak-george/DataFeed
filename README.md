@@ -4,6 +4,49 @@
 <h2>Project Overview: From XML to MySQL</h2> 
 <img src="images/dataFeed.png" alt="DataFeed Structure">
 
+<h2>Setting up the project</h2>
+<p>Inside DataFeed:</p>
+
+```bash
+composer install
+```
+
+<p>Inside mysql command line:</p>
+
+```bash
+CREATE DATABASE IF NOT EXISTS data_feed;
+```
+
+```bash
+USE data_feed;
+```
+
+```bash
+CREATE TABLE IF NOT EXISTS products (
+        id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+        entity_id INT,
+        category_name VARCHAR(255),
+        sku VARCHAR(255),
+        name VARCHAR(255),
+        description TEXT,
+        shortdesc TEXT,
+        price VARCHAR(255),
+        link VARCHAR(255),
+        image VARCHAR(255),
+        brand VARCHAR(255),
+        rating VARCHAR(255),
+        caffeine_type VARCHAR(255),
+        count VARCHAR(255),
+        flavored VARCHAR(255),
+        seasonal VARCHAR(255),
+        instock VARCHAR(255),
+        facebook INT,
+        is_k_cup INT,
+        file_name VARCHAR(255)
+);
+```
+
+
 <h2>Usage</h2>
 from XML to MySQL
 
@@ -69,9 +112,6 @@ public function pushData($data, $storageType)
         }
     }
 ```
-
-<h3>From JSON to MySQL</h3>
-<li></li>
 
 <h3>Logging Errors</h3>
 <p>The errors are logged into outputFiles/errorLogs through the ErrorLog.php class</p>
