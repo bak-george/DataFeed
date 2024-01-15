@@ -14,7 +14,6 @@ $logFile      = new ErrorLog($logDirectory);
 try {
     $file = new XMLFile();
     $products = $file->decoding($fileName);
-    print_r($products);
     $file->pushData($products, $pushTo);
 } catch (Exception $e) {
     $logFile->writeLog('Error: ' . $e->getMessage());

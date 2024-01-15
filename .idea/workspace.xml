@@ -5,21 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9a473770-baee-4f88-aa5e-a51018a2c041" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/phpunit.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeception.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeception.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/75812d84-7b26-4741-a065-b67feebf3f08.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/75812d84-7b26-4741-a065-b67feebf3f08.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/phpspec.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/phpspec.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/unit/AbstractFileTest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.phpunit.result.cache" beforeDir="false" afterPath="$PROJECT_DIR$/.phpunit.result.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inputFiles/test.xml" beforeDir="false" afterPath="$PROJECT_DIR$/inputFiles/test.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/file/AbstractFile.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/file/AbstractFile.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/file/xml/import.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/file/xml/import.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/tests/XMLFileTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/unit/XMLFileTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -209,7 +198,7 @@
       <workItem from="1705071640540" duration="24780000" />
       <workItem from="1705139413285" duration="2329000" />
       <workItem from="1705224941312" duration="32321000" />
-      <workItem from="1705323163746" duration="3288000" />
+      <workItem from="1705323163746" duration="4284000" />
     </task>
     <servers />
   </component>
