@@ -97,9 +97,10 @@ public function pushData($data, $storageType)
 <p>The errors are logged into outputFiles/errorLogs through the ErrorLog.php class</p>
 
 <h3>Testing</h3>
-<p>At first stages of the projected I've run import.php</p>
+<p>At first stages of the project I've run import.php for quick fixes</p>
+
 ```bash
-php src/app/file/xml/import.php --file="test.xml" --pushTo="json"
+php src/app/file/xml/import.php --file="test.xml" --pushTo="database"
 ```
 
-<p>But in order to be sure of the tools functionalities I've written PHPUnit tests (tests/unit)</p>
+<p>Afterward I've written PHPUnit tests (tests/unit)</p>
