@@ -16,4 +16,6 @@ interface FileInterface
     public function pushToMySQL(array $data);
 
     public function pushToJSON(array $data);
+
+    public function productBuild($data, $storageType, $entityManager = null);
 }
