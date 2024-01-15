@@ -22,6 +22,10 @@ class ComposerStaticInitbcc6b0793108ef1450c472988ff587b5
     );
 
     public static $prefixLengthsPsr4 = array (
+        'u' => 
+        array (
+            'unit\\' => 5,
+        ),
         'p' => 
         array (
             'phpDocumentor\\Reflection\\' => 25,
@@ -100,6 +104,10 @@ class ComposerStaticInitbcc6b0793108ef1450c472988ff587b5
     );
 
     public static $prefixDirsPsr4 = array (
+        'unit\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/tests/unit',
+        ),
         'phpDocumentor\\Reflection\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
@@ -319,10 +327,6 @@ class ComposerStaticInitbcc6b0793108ef1450c472988ff587b5
         array (
             0 => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy',
         ),
-    );
-
-    public static $fallbackDirsPsr4 = array (
-        0 => __DIR__ . '/../..' . '/tests',
     );
 
     public static $classMap = array (
@@ -1515,7 +1519,6 @@ class ComposerStaticInitbcc6b0793108ef1450c472988ff587b5
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInitbcc6b0793108ef1450c472988ff587b5::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInitbcc6b0793108ef1450c472988ff587b5::$prefixDirsPsr4;
-            $loader->fallbackDirsPsr4 = ComposerStaticInitbcc6b0793108ef1450c472988ff587b5::$fallbackDirsPsr4;
             $loader->classMap = ComposerStaticInitbcc6b0793108ef1450c472988ff587b5::$classMap;
 
         }, null, ClassLoader::class);

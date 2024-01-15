@@ -1,1 +1,1 @@
-{"version":1,"defects":{"BasicTestCase::testCase":7,"XMLFileTest::testDecodingSuccess":8},"times":{"BasicTestCase::testCase":0.004,"BasicTestCase::testAnotherCase":0.004,"XMLFileTest::testDecodingSuccess":0.014}}
+{"version":1,"defects":{"BasicTestCase::testCase":7,"XMLFileTest::testDecodingSuccess":8,"unit\\XMLFileTest::testDecoding":5,"unit\\XMLFileTest::it_decodes_xml":7},"times":{"BasicTestCase::testCase":0.004,"BasicTestCase::testAnotherCase":0.004,"XMLFileTest::testDecodingSuccess":0.014,"unit\\XMLFileTest::testDecoding":0.004,"unit\\XMLFileTest::it_decodes_xml":0.008}}

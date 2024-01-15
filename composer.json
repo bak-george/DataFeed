@@ -15,7 +15,7 @@
         "psr-4": {
             "app\\": "src/app/",
             "entity\\": "src/Entity/",
-            "": "tests"
+            "unit\\": "tests/unit/"
         }
     },
     "require-dev": {

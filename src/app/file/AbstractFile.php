@@ -91,6 +91,8 @@ class AbstractFile implements FileInterface
             }
 
             $entityManager->flush();
+
+            return true;
         } catch (Exception | TypeError $e) {
             $logDirectory = dirname(__DIR__, 3) . '/outputFiles/errorLogs';
             $logFile = new ErrorLog($logDirectory);
@@ -139,6 +141,8 @@ class AbstractFile implements FileInterface
             $jsonFilePath = __DIR__ . '/../../../outputFiles/JSON/' . $jsonFileName . '.json';
 
             file_put_contents($jsonFilePath, $jsonContent);
+
+            return true;
         } catch (Exception | TypeError $e) {
             $logDirectory = dirname(__DIR__, 3) . '/outputFiles/errorLogs';
             $logFile = new ErrorLog($logDirectory);
