@@ -69,9 +69,9 @@ class AbstractFile implements FileInterface
         } catch (Exception | TypeError $e) {
             $logDirectory = dirname(__DIR__, 3) . '/outputFiles/errorLogs';
             $logFile = new ErrorLog($logDirectory);
-            $logFile->writeLog('Error: ' . $e->getMessage());
+            $logFile->writeLog('Error: ' . $e->getMessage() . $e->getLine() . $e->getCode() . $e->getFile());
 
-            exit('Error: ' . $e->getMessage());
+            exit('Error: ' . $e->getMessage() . $e->getLine() . $e->getCode() . $e->getFile());
         }
     }
 
@@ -103,37 +103,67 @@ class AbstractFile implements FileInterface
     final public function productBuild($data, $storageType, $entityManager = null)
     {
         $allProducts = [];
+        $fileExtension = OptionsValidation::checkExtension($this->getFileName());
 
-        foreach ($data['item'] as $product) {
-            $importProduct = (new Product());
-            $importProduct->setEntityId($product['entity_id']);
-            $importProduct->setCategoryName($product['CategoryName']);
-            $importProduct->setSku($product['sku']);
-            $importProduct->setName($product['name']);
-            $importProduct->setDescription($product['description']);
-            $importProduct->setShortdesc($product['shortdesc']);
-            $importProduct->setPrice($product['price']);
-            $importProduct->setLink($product['link']);
-            $importProduct->setImage($product['image']);
-            $importProduct->setBrand($product['Brand']);
-            $importProduct->setRating($product['Rating']);
-            $importProduct->setCaffeineType($product['CaffeineType']);
-            $importProduct->setCount($product['Count']);
-            $importProduct->setFlavored($product['Flavored']);
-            $importProduct->setSeasonal($product['Seasonal']);
-            $importProduct->setInstock($product['Instock']);
-            $importProduct->setFacebook($product['Facebook']);
-            $importProduct->setIsKcup($product['IsKCup']);
-            $importProduct->setFileName($this->getFileName());
+        if ($fileExtension == 'json') {
+            foreach ($data as $product) {
+                $importProduct = (new Product());
+                $importProduct->setEntityId($product['entity_id']);
+                $importProduct->setCategoryName($product['CategoryName'] );
+                $importProduct->setSku($product['sku']);
+                $importProduct->setName($product['name']);
+                $importProduct->setDescription($product['description']);
+                $importProduct->setShortdesc($product['shortdesc']);
+                $importProduct->setPrice($product['price']);
+                $importProduct->setLink($product['link']);
+                $importProduct->setImage($product['image']);
+                $importProduct->setBrand($product['Brand']);
+                $importProduct->setRating($product['Rating']);
+                $importProduct->setCaffeineType($product['CaffeineType']);
+                $importProduct->setCount($product['Count']);
+                $importProduct->setFlavored($product['Flavored']);
+                $importProduct->setSeasonal($product['Seasonal']);
+                $importProduct->setInstock($product['Instock']);
+                $importProduct->setFacebook($product['Facebook']);
+                $importProduct->setIsKcup($product['IsKCup']);
+                $importProduct->setFileName($this->getFileName());
 
-            if ($storageType == 'json') {
-                $allProducts[] = $importProduct;
-
-                return $allProducts;
-            } elseif ($storageType == 'database') {
                 $entityManager->persist($importProduct);
             }
+        } else {
+            foreach ($data['item'] as $product) {
+                $importProduct = (new Product());
+                $importProduct->setEntityId($product['entity_id']);
+                $importProduct->setCategoryName($product['CategoryName'] );
+                $importProduct->setSku($product['sku']);
+                $importProduct->setName($product['name']);
+                $importProduct->setDescription($product['description']);
+                $importProduct->setShortdesc($product['shortdesc']);
+                $importProduct->setPrice($product['price']);
+                $importProduct->setLink($product['link']);
+                $importProduct->setImage($product['image']);
+                $importProduct->setBrand($product['Brand']);
+                $importProduct->setRating($product['Rating']);
+                $importProduct->setCaffeineType($product['CaffeineType']);
+                $importProduct->setCount($product['Count']);
+                $importProduct->setFlavored($product['Flavored']);
+                $importProduct->setSeasonal($product['Seasonal']);
+                $importProduct->setInstock($product['Instock']);
+                $importProduct->setFacebook($product['Facebook']);
+                $importProduct->setIsKcup($product['IsKCup']);
+                $importProduct->setFileName($this->getFileName());
+
+                if ($storageType == 'json') {
+                    $allProducts[] = $importProduct;
+
+                    return $allProducts;
+                } elseif ($storageType == 'database') {
+                    $entityManager->persist($importProduct);
+                }
+            }
         }
+
+
     }
 
     public function decoding($fileName)

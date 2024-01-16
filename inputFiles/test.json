@@ -1,1 +1,42 @@
-{"entityId":340,"categoryName":"Green Mountain Ground Coffee","sku":"20","name":"Green Mountain Coffee French Roast Ground Coffee 24 2.2oz Bag","description":"here is a description","shortdesc":"Green Mountain Coffee French Roast Ground Coffee 24 2.2oz Bag steeps cup after cup of smoky-sweet, complex dark roast coffee from Green Mountain Ground Coffee.","price":"41.6000","link":"http:\/\/www.coffeeforless.com\/green-mountain-coffee-french-roast-ground-coffee-24-2-2oz-bag.html","image":"http:\/\/mcdn.coffeeforless.com\/media\/catalog\/product\/images\/uploads\/intro\/frac_box.jpg","brand":"Green Mountain Coffee","rating":"0","caffeineType":"Caffeinated","count":"24","flavored":"No","seasonal":"No","instock":"Yes","facebook":1,"isKcup":0,"fileName":"test.xml"}
+{
+  "product1": {
+    "entity_id": 340,
+    "CategoryName": "Green Mountain Ground Coffee",
+    "sku": "20",
+    "name": "Green Mountain Coffee French Roast Ground Coffee 24 2.2oz Bag",
+    "description": "here is a description",
+    "shortdesc": "Green Mountain Coffee French Roast Ground Coffee 24 2.2oz Bag steeps cup after cup of smoky-sweet, complex dark roast coffee from Green Mountain Ground Coffee.",
+    "price": "41.6000",
+    "link": "http://www.coffeeforless.com/green-mountain-coffee-french-roast-ground-coffee-24-2-2oz-bag.html",
+    "image": "http://mcdn.coffeeforless.com/media/catalog/product/images/uploads/intro/frac_box.jpg",
+    "Brand": "Green Mountain Coffee",
+    "Rating": "0",
+    "CaffeineType": "Caffeinated",
+    "Count": "24",
+    "Flavored": "No",
+    "Seasonal": "No",
+    "Instock": "Yes",
+    "Facebook": 1,
+    "IsKCup": 0
+  },
+  "product2": {
+    "entity_id": 500,
+    "CategoryName": "Premium Espresso Beans",
+    "sku": "ABC123",
+    "name": "Italian Espresso Blend",
+    "description": "Indulge in the rich and bold flavors of our Italian Espresso Blend, carefully crafted for coffee enthusiasts.",
+    "shortdesc": "Experience the perfect harmony of dark roast and subtle notes, delivering a delightful coffee experience with every sip.",
+    "price": "28.9900",
+    "link": "http://www.example.com/italian-espresso-blend",
+    "image": "http://example.com/images/italian_espresso_blend.jpg",
+    "Brand": "Coffee Connoisseur",
+    "Rating": "4.5",
+    "CaffeineType": "High Caffeine",
+    "Count": "500g",
+    "Flavored": "No",
+    "Seasonal": "No",
+    "Instock": "Yes",
+    "Facebook": 5,
+    "IsKCup": 1
+  }
+}

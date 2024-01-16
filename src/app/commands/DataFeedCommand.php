@@ -46,7 +46,6 @@ class DataFeedCommand extends Command
             $scriptPath = __DIR__ . '/../file/' . $fileExtension .  '/';
             $commandBuild = ['php', 'import.php', '--file', $filename, '--pushTo', $pushTo];
             $importScript = new Process($commandBuild, $scriptPath);
-
             $importScript->run();
 
             if ($importScript->isSuccessful()) {

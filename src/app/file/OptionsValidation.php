@@ -8,7 +8,7 @@ use Exception;
 
 class OptionsValidation
 {
-    protected static array $extensions = ["xml"];
+    protected static array $extensions = ["xml", "json"];
     protected static array $pushToTypes = ["database", "json"];
 
     public static function checkExtension($fileName)

@@ -113,6 +113,36 @@ public function pushData($data, $storageType)
     }
 ```
 
+<h3>From JSON to MySQL</h3>
+<img src="images/fromJSONtoMySQL.png" alt="fromJSONtoMySQL">
+<li>Add 'json' within the protected static array $extensions in src/app/file/OptionsValidation.php </li>
+<li>Create a new directory titled "json" in src/app/file/ .</li>
+<li>Create import.php and a class JSONFile. Use as a reference the same files under the src/app/file/xml like the following:</li>
+
+```bash
+class JSONFILE extends AbstractFile
+{
+    public function decoding($fileName)
+    {
+        $this->setFileName($fileName);
+        $this->setFilePath($fileName);
+
+        $jsonContent = file_get_contents($this->getFilePath());
+
+        return json_decode($jsonContent, true);
+    }
+
+    public function pushData($data, $storageType)
+    {
+        if ($storageType == "database") {
+            $this->pushToMySQL($data);
+        } else {
+            throw new \Exception('Failed to push data into ' . $storageType  . ' storage');
+        }
+    }
+}
+```
+
 <h3>Logging Errors</h3>
 <p>The errors are logged into outputFiles/errorLogs through the ErrorLog.php class</p>
 

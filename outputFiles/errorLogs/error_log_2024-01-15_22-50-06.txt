@@ -1,0 +1,1 @@
+[2024-01-15 22:50:06] Error: entity\Product::setEntityId(): Argument #1 ($entityId) must be of type int, null given, called in /Users/georgebakoulis/Documents/GitHub/DataFeed/src/app/file/AbstractFile.php on line 112680/Users/georgebakoulis/Documents/GitHub/DataFeed/src/Entity/Product.php
