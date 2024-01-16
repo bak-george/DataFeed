@@ -59,6 +59,11 @@ from XML to JSON
 php ./data dataFeed -f "feed.xml" -p "json"
 ```
 
+from JSON to MySQL
+```bash
+ php ./data dataFeed -f "test.json" -p "database"
+```
+
 <h2>Extensibility</h2>
 Because of the abstraction and the object Product, you can add your own type of input and output storage.
 <h3>From XML to JSON</h3>

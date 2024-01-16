@@ -65,7 +65,6 @@ class AbstractFile implements FileInterface
         try {
             $this->productBuild($data, 'database', $entityManager);
             $entityManager->flush();
-
         } catch (Exception | TypeError $e) {
             $logDirectory = dirname(__DIR__, 3) . '/outputFiles/errorLogs';
             $logFile = new ErrorLog($logDirectory);
@@ -96,7 +95,7 @@ class AbstractFile implements FileInterface
             $logFile = new ErrorLog($logDirectory);
             $logFile->writeLog('Error: ' . $e->getMessage());
 
-            exit('Error: ' . $e->getMessage());
+            exit('Error: ' . $e->getMessage() . $e->getLine() . $e->getCode() . $e->getFile());
         }
     }
 
@@ -163,7 +162,7 @@ class AbstractFile implements FileInterface
             }
         }
 
-
+        return false;
     }
 
     public function decoding($fileName)
